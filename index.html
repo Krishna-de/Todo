@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+
+<body class="col-sm-12" >
+
+	<div ng-app="myApp" ng-controller="MainCtrl" class="main">
+
+		<div style="background-color:yellow" >
+
+			<h2> My Todo List </h2>
+			<br>
+			<div class="content">
+				<form name="frm" ng-submit="todoAdd()">
+			    	<input  type="text" ng-model="todoInput" size="40" placeholder="Descrption" required>
+			    	<button type="button" class="btn btn-success" ng-click="todoAdd()" ng-disabled="frm.$invalid" >New task</button>  
+				</form>
+				<br>
+				<div ng-repeat="x in todoList">
+			    	<input type="checkbox" ng-model="x.done"> 
+			    	<span class="item"> <strong>{{x.todoText}}</strong></span>
+				</div>
+
+				<br>
+
+				<p> <button type="button" class="btn btn-danger" ng-click="remove()">Delete Task</button></p>
+			</div>
+
+		</div>
+
+
+	</div>
+
+
+	<script src="app.js"></script>
+	<script src="MainCtrl.js"> </script>
+
+
+<!-- jQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+</body>
+</html>
+
+
+
